@@ -1,6 +1,7 @@
 # Responsive Twitter Clone
 
-
+Run ruby on rails server post no 3000
+after run ruby server you can run our react projects
 
 Go to the project directory
 
