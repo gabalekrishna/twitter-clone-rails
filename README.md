@@ -1,19 +1,6 @@
 # Responsive Twitter Clone
 
-This project was bootstrapped with
-[Create React App](https://github.com/facebook/create-react-app).
 
-## Demo
-
-https://bilgihankose.github.io/twitter-tailwind-clone
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/bilgihankose/twitter-tailwind-clone.git
-```
 
 Go to the project directory
 
@@ -39,8 +26,6 @@ React, TailwindCSS
 
 ## 🚀 About Me
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/bilgihankose/)
+[![linkedin](https://www.linkedin.com/in/krishna-gabale-a66034202/)
 
-## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
