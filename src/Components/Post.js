@@ -9,10 +9,9 @@ import {
   
 } from "@heroicons/react/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/solid";
-import React ,{useState,useEffect} from 'react'
+import React ,{useState} from 'react'
 
 const Post = ({ post}) => {
-  const [deleteData, setDeleteData] = useState(null);
   const [isLiked, setIsLiked] = useState(false);
   
   const handleDelete = async ()=>{

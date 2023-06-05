@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
-import { EmojiHappyIcon } from "@heroicons/react/outline";
+import { EmojiHappyIcon} from "@heroicons/react/outline";
 import { useState,useEffect } from "react";
+
 
 const TweetInput = () => {
   const [input, setInput] = useState("");
@@ -52,6 +53,8 @@ const TweetInput = () => {
 
   return (
     <div className="flex border-b border-gray-200 p-3 space-x-3">
+  
+    
       <img
         src="https://1fid.com/wp-content/uploads/2022/06/Twitter-profile-picture-4-1024x1024.jpg"
         alt="Profile picture"

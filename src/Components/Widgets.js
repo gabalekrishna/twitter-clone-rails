@@ -1,5 +1,5 @@
 import { SearchIcon } from "@heroicons/react/outline";
-import { useState ,useEffect} from "react";
+import { useState} from "react";
 import News from "./News";
 
 const newsData = [
@@ -66,14 +66,19 @@ const newsData = [
 ];
 const Widgets = () => {
   const [newsNumber, setNewsNumber] = useState(3);
-//   const [searchQuery, setSearchQuery] = useState("");
-// const [filteredData, setFilteredData] = useState(data);
-// useEffect(() => {
-//   const filteredData = data.filter((post) =>
-//     post.text.toLowerCase().includes(searchQuery.toLowerCase())
-//   );
-//   setFilteredData(filteredData);
-// }, [searchQuery, data]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredNewsData, setFilteredNewsData] = useState(newsData);
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    const filteredData = newsData.filter(
+      (news) =>
+        news.hashtag.toLowerCase().includes(query) ||
+        news.tweetCount.toLowerCase().includes(query)
+    );
+    setFilteredNewsData(filteredData);
+    setSearchQuery(query);
+  };
   return (
     <div className="lg:w-[600px] hidden lg:inline ml-7 space-y-5">
       <div className="w-[90%] xl:w-[75%] sticky top-0 bg-white py-2 z-50">
@@ -82,18 +87,19 @@ const Widgets = () => {
           <input
             className="absolute inset-0 rounded-full pl-11 border-gray-500 text-gray-700 focus:shadow-lg focus:bg-white bg-gray-100"
             type="text"
-            placeholder="Search Twitter"
-            // onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search #tags"
+            value={searchQuery}
+            onChange={handleSearch}
+            
           />
         </div>
       </div>
      
       <div className="text-gray-700 space-y-3 bg-gray-100 rounded-xl pt-2 w-[90%] xl:w-[75%]">
         <h4 className="font-bold text-xl px-4">World trends</h4>
-        {newsData.slice(0, newsNumber).map((news) => (
+        {filteredNewsData.slice(0, newsNumber).map((news) => (
           <News key={news.id} news={news} />
         ))}
-
         <button
           onClick={() => setNewsNumber(newsNumber + 3)}
           className="text-sky-500 px-4 py-2 hover:bg-gray-200 hover:rounded-bl hover:rounded-br w-[100%]"
